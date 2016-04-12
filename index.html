@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>DOTA2卡尔极速挑战！</title>
+    <meta name="ROBOTS" content="INDEX,FOLLOW">
+    <meta name="description" content="提高手速,挑战钢琴手卡尔!">
+    <meta name="keywords" content="dota, dota 2, invokergame, invoker, game, invoke, quash, wex, exort,卡尔,钢琴手">
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <script src="scripts/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="scripts/game.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="http://html2canvas.hertzen.com/build/html2canvas.js"></script>
+    <link rel="stylesheet" href="http://cdn.maxjia.com/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/home.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/public.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/play.css" type="text/css"/>
+</head>
+<body>
+<!--<script type="text/javascript">(function preloadImages() {
+    if (document.images) {
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+        var img4 = new Image();
+        var img5 = new Image();
+        var img6 = new Image();
+        var img7 = new Image();
+        var img8 = new Image();
+        var img9 = new Image();
+        var img10 = new Image();
+        var img11 = new Image();
+        var img12 = new Image();
+        var img13 = new Image();
+        var img14 = new Image();
+        var img15 = new Image();
+        var img16 = new Image();
+        var img17=  new Image();
+        var img18=  new Image();
+        var div1=document.createElement('div');
+        var div2=document.createElement('div');
+        var div3=document.createElement('div');
+        var div17=document.createElement('div');
+        var div18=document.createElement('div');
+        var div4=document.createElement('div');
+        var div5=document.createElement('div');
+        var div6=document.createElement('div');
+        img1.src = "./images/spells/quash.png";
+        img2.src = "./images/spells/wex.png";
+        img3.src = "./images/spells/exort.png";
+        img17.src = "./images/panel-bg.jpg";
+        img18.src = "./images/dota2bg.jpg";
+        img4.src = "./images/hotkey-bg.png";
+        img5.src = "./images/spells/invoke.png";
+        img6.src = "./images/buttonbg.jpg";
+        div1.style.backgroundImage="url(./images/spells/quash.png)";
+        div2.style.backgroundImage="url(./images/spells/wex.png)";
+        div3.style.backgroundImage="url(./images/spells/exort.png)";
+        div17.style.backgroundImage="url(./images/panel-bg.jpg)";
+        div18.style.backgroundImage= "url(./images/dota2bg.jpg)";
+        div4.style.backgroundImage="url(./images/hotkey-bg.png)";
+        div5.style.backgroundImage="url(./images/spells/invoke.png)";
+        div6.style.backgroundImage="url(./images/buttonbg.jpg)";
+
+        //技能图片预加载
+        img7.src ="./images/spells/cold_snap.png";
+        img8.src ="./images/spells/ghost_walk.png";
+        img9.src ="./images/spells/ice_wall.png";
+        img10.src ="./images/spells/emp.png";
+        img11.src ="./images/spells/tornado.png";
+        img12.src ="./images/spells/alacrity.png";
+        img13.src ="./images/spells/sun_strike.png";
+        img14.src ="./images/spells/forge_spirit.png";
+        img15.src ="./images/spells/chaos_meteor.png";
+        img16.src ="./images/spells/deafening_blast.png";
+    }
+})();</script>-->
+<div id="mask">
+    <div id="finalScore">
+        <span class='close rounded black'></span>
+        <div id="scoreBox"></div>
+        <div id="shareBox">分享到：<span class="Weibo"></span>
+            <span class="QQ"></span>
+        </div>
+    </div>
+
+</div>
+<div class="header">
+    <div class="banner"><img src="http://7xqs6j.com1.z0.glb.clouddn.com/banner.jpg"/></div>
+    <div id="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="hero.html">英雄资料</a></li>
+            <li><a href="rank.html">荣誉榜</a></li>
+            <li><a href="about.html">关于</a></li>
+        </ul>
+    </div>
+
+</div>
+<div class="background">
+    <div class="content">
+        <div id="controlbox">
+            <h2>控制面板</h2>
+            <h3>技能键位</h3>
+            <table id="skillKey">
+                <tbody>
+                <tr class="quash">
+                    <td class="controlboxHotkey" id="quashkeySet">Q</td>
+                    <td>-</td>
+                    <td>冰</td>
+                </tr>
+                <tr class="wex">
+                    <td class="controlboxHotkey" id="wexkeySet">W</td>
+                    <td>-</td>
+                    <td>雷</td>
+                </tr>
+                <tr class="exort">
+                    <td class="controlboxHotkey" id="exortkeySet">E</td>
+                    <td>-</td>
+                    <td>火</td>
+                </tr>
+                <tr class="invoke">
+                    <td class="controlboxHotkey" id="invokekeySet">R</td>
+                    <td>-</td>
+                    <td>元素祈唤</td>
+                </tr>
+                <tr class="NormalHotkeys skill1" style="display: table-row;">
+                    <td class="controlboxHotkey" id="skill1keySet">D</td>
+                    <td>-</td>
+                    <td>技能 1</td>
+                </tr>
+                <tr class="NormalHotkeys skill2" style="display: table-row;">
+                    <td class="controlboxHotkey" id="skill2keySet">F</td>
+                    <td>-</td>
+                    <td>技能 2</td>
+                </tr>
+                <tr class="LegacyHotkeys jslq" style="display: none;">
+                    <td class="controlboxHotkey" id="jslqkeySet">Y</td>
+                    <td>-</td>
+                    <td>急速冷却</td>
+                </tr>
+                <tr class="LegacyHotkeys ylmb" style="display: none;">
+                    <td class="controlboxHotkey" id="ylmbkeySet">V</td>
+                    <td>-</td>
+                    <td>幽灵漫步</td>
+                </tr>
+                <tr class="LegacyHotkeys hbzq" style="display: none;">
+                    <td class="controlboxHotkey" id="hbzqkeySet">G</td>
+                    <td>-</td>
+                    <td>寒冰之墙</td>
+                </tr>
+                <tr class="LegacyHotkeys dcmc" style="display: none;">
+                    <td class="controlboxHotkey" id="dcmckeySet">C</td>
+                    <td>-</td>
+                    <td>电磁脉冲</td>
+                </tr>
+                <tr class="LegacyHotkeys qxjf" style="display: none;">
+                    <td class="controlboxHotkey" id="qxjfkeySet">X</td>
+                    <td>-</td>
+                    <td>强袭飓风</td>
+                </tr>
+                <tr class="LegacyHotkeys ldxj" style="display: none;">
+                    <td class="controlboxHotkey" id="ldxjkeySet">Z</td>
+                    <td>-</td>
+                    <td>灵动迅捷</td>
+                </tr>
+                <tr class="LegacyHotkeys yycj" style="display: none;">
+                    <td class="controlboxHotkey" id="yycjkeySet">T</td>
+                    <td>-</td>
+                    <td>阳炎冲击</td>
+                </tr>
+                <tr class="LegacyHotkeys rljl" style="display: none;">
+                    <td class="controlboxHotkey" id="rljlkeySet">F</td>
+                    <td>-</td>
+                    <td>熔炉精灵</td>
+                </tr>
+                <tr class="LegacyHotkeys hdys" style="display: none;">
+                    <td class="controlboxHotkey" id="hdyskeySet">D</td>
+                    <td>-</td>
+                    <td>混沌陨石</td>
+                </tr>
+                <tr class="LegacyHotkeys czsb" style="display: none;">
+                    <td class="controlboxHotkey" id="czsbkeySet">B</td>
+                    <td>-</td>
+                    <td>超震声波</td>
+                </tr>
+                </tbody>
+            </table>
+            <input type="checkbox" id="legacyCheckbox">
+            <label for="legacyCheckbox">使用传统键位</label><br/>
+            <button type="button" id="reset">恢复默认</button>
+            <br/>
+            <input type="checkbox" id="musicCheckbox" checked="checked">
+            <label for="musicCheckbox">音乐</label>
+            <input type="checkbox" id="soundCheckbox" checked="checked">
+            <label for="soundCheckbox">音效</label><br/>
+        </div>
+        <div id="skillBox">
+            <h2>
+                技能表</h2>
+
+            <div id="spellTable">
+                <img src="images/spells/cold_snap.png">
+                <span class="spellName">急速冷却 - </span><span class="quashtext hotkey1">Q</span> <span
+                    class="quashtext hotkey1">Q</span> <span
+                    class="quashtext hotkey1">Q</span>
+                <br>
+                <img src="images/spells/ghost_walk.png">
+                <span class="spellName">幽灵漫步 - </span><span class="quashtext hotkey1">Q</span> <span
+                    class="quashtext hotkey1">Q</span> <span
+                    class="wextext hotkey2">W</span>
+                <br>
+                <img src="images/spells/ice_wall.png">
+                <span class="spellName">寒冰之墙 - </span><span class="quashtext hotkey1">Q</span> <span
+                    class="quashtext hotkey1">Q</span> <span
+                    class="exorttext hotkey3">E</span>
+                <br>
+                <img src="images/spells/emp.png">
+                <span class="spellName"> 电磁脉冲 - </span><span class="wextext hotkey2">W</span> <span
+                    class="wextext hotkey2">W</span> <span
+                    class="wextext hotkey2">W</span>
+                <br>
+                <img src="images/spells/tornado.png">
+                <span class="spellName">强袭飓风 - </span><span class="wextext hotkey2">W</span> <span
+                    class="wextext hotkey2">W</span> <span
+                    class="quashtext hotkey1">Q</span>
+                <br>
+                <img src="images/spells/alacrity.png">
+                <span class="spellName">灵动迅捷 - </span><span class="wextext hotkey2">W</span> <span
+                    class="wextext hotkey2">W</span> <span
+                    class="exorttext hotkey3">E</span>
+                <br>
+                <img src="images/spells/sun_strike.png">
+                <span class="spellName">阳炎冲击 - </span><span class="exorttext hotkey3">E</span> <span
+                    class="exorttext hotkey3">E</span> <span
+                    class="exorttext hotkey3">E</span>
+                <br>
+                <img src="images/spells/forge_spirit.png">
+                <span class="spellName">熔炉精灵 - </span><span class="exorttext hotkey3">E</span> <span
+                    class="exorttext hotkey3">E</span> <span
+                    class="quashtext hotkey1">Q</span>
+                <br>
+                <img src="images/spells/chaos_meteor.png">
+                <span class="spellName"> 混沌陨石 - </span><span class="exorttext hotkey3">E</span> <span
+                    class="exorttext hotkey3">E</span> <span
+                    class="wextext hotkey2">W</span>
+                <br>
+                <img src="images/spells/deafening_blast.png">
+                <span class="spellName">超震声波 - </span><span class="quashtext hotkey1">Q</span> <span
+                    class="wextext hotkey2">W</span> <span
+                    class="exorttext hotkey3">E</span>
+                <br>
+            </div>
+        </div>
+
+
+        <div id="mainContainer">
+            <h1 id="title">极速卡尔</h1>
+
+            <div id="menu">
+                <ul id="modelList">
+                    <li id="jsms"><a href="javascript:void(0)" class="button button-black">极速模式</a></li>
+                    <li id="szms"><a href="javascript:void(0)" class="button button-black"> 实战模式</a></li>
+                </ul>
+                <div id="intro">
+                    <h2>极速模式</h2>
+
+                    <div id="arrow"></div>
+                    <p>每次随机给出一个技能，玩家只需召唤该技能，无需施放，总共20个技能。快来挑战你的极限手速吧！</p>
+                </div>
+            </div>
+            <div id="gameInterface">
+                <div class="playZone">
+                    <div class="instruction">说明</div>
+                    <div class="instructionDetail">
+                        <input type="button" value="开始游戏（点击）" class="buttonStart">
+                        <span id="tipsWord">剩余技能：</span>
+                        <span id="tipsNum">20</span>
+
+                    </div>
+                    <div class="readyCountNum"></div>
+                    <div class="stopWatch">00:00</div>
+                    <div class="btnAfterGame">
+                        <input class="restart" type="button" value="再来一次"/><input class="cancel" type="button"
+                                                                                  value="返回"/>
+                    </div>
+                    <div id="modelBox">
+                        <div id="jsms_box">
+                            <div id="jsms_spellShow">
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                            </div>
+                        </div>
+                        <div id="szms_box">
+                            <div id="szms_spellShow1">
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                            </div>
+                            <div id="szms_spellShow2">
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                            </div>
+                            <div id="szms_spellShow3">
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                            </div>
+                            <div id="szms_spellShow4">
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                            </div>
+                            <div id="szms_spellShow6">
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                                <br/>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                            </div>
+                            <div id="szms_spellShow10">
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                                <br/>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+
+                                <div class="picture"></div>
+                                <span class="name"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="rankList" style="display: none"></div>
+                    <div id="loading"><img src="images/loading_scoreboard.gif"></div>
+                    <div class="orbContainer">
+                        <div id="orb3">
+                        </div>
+                        <div id="orb2">
+                        </div>
+                        <div id="orb1">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="panel">
+                    <div id="quash">
+                        <div class="quashkey hotkey">Q</div>
+                    </div>
+                    <div id="wex">
+                        <div class="wexkey hotkey">W</div>
+                    </div>
+                    <div id="exort">
+                        <div class="exortkey hotkey">E</div>
+                    </div>
+                    <div id="skill1">
+                        <div class="skill1key hotkey">D</div>
+                    </div>
+                    <div id="skill2">
+                        <div class="skill2key hotkey">F</div>
+                    </div>
+                    <div id="invoke">
+                        <div class="invokekey hotkey">R</div>
+                    </div>
+                    <input class="cancel" type="button" value="返回"/>
+                    <input class="restart" type="button" value="重新开始"/>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div id="footer" style="display: none">
+    <audio id="countSound" class="sound"
+           src="music/ui_findmatch_join_01.wav" hidden="true">
+    </audio>
+    <audio id="modelhoverSound" class="sound"
+           src="music/click_alt.wav" hidden="true">
+    </audio>
+    <audio id="modelclickSound" class="sound"
+           src="music/pick_select.wav" hidden="true">
+    </audio>
+
+    <audio id="cancelSound" class="sound"
+           src="music/click_back.wav" hidden="true">
+    </audio>
+    <audio id="invokeSound" class="sound"
+           src="music/invoke.wav" hidden="true">
+    </audio>
+    <audio id="coldSnap" class="jslq sound skill"
+           src="music/cold_snap.wav" hidden="true">
+    </audio>
+    <audio id="ghostWalk" class="ylmb sound skill"
+           src="music/ghost_walk.wav" hidden="true">
+    </audio>
+    <audio id="iceWall" class="hbzq sound skill"
+           src="music/ice_wall_slow01.wav" hidden="true">
+    </audio>
+
+    <audio id="empCharge" class="dcmc sound skill"
+           src="music/emp_charge.wav" hidden="true">
+    </audio>
+
+    <audio id="tornado" class="qxjf sound skill"
+           src="music/tornado_cast.wav" hidden="true">
+    </audio>
+    <audio id="alacrity" class="ldxj sound skill"
+           src="music/alacrity.wav" hidden="true">
+    </audio>
+
+    <audio id="sunstrikeCharge" class="yycj sound skill"
+           src="music/sunstrike_charge.wav" hidden="true">
+    </audio>
+
+    <audio id="meteor" class="hdys sound skill"
+           src="music/meteor.wav" hidden="true">
+    </audio>
+    <audio id="deafeningBlast" class="czsb sound skill"
+           src="music/deafening_blast.wav" hidden="true">
+    </audio>
+    <audio id="lvlup" class="sound"
+           src="music/power_up_06.wav" hidden="true">
+    </audio>
+    <audio id="gameMusic" class="music" src="http://m2.music.126.net/AOChMFXWryJzWO2vR5iwIw==/7797736464973704.mp3"
+           hidden="true" loop="true">
+    </audio>
+    <audio id="keyBindOpen" class="sound"
+           src="music/keybind_open.wav" hidden="true">
+    </audio>
+    <audio id="keyBindSet" class="sound"
+           src="music/keybind_set.wav" hidden="true">
+    </audio>
+    <audio id="victory" class="sound"
+           src="http://7xqs6j.com1.z0.glb.clouddn.com/dota2_music_victory_radiant_comp.mp3" hidden="true">
+    </audio>
+    <audio id="victorySpeak1" class="victorySpeak sound"
+           src="http://7xqs6j.com1.z0.glb.clouddn.com/invo_win_02.mp3" hidden="true">
+    </audio>
+    <audio id="victorySpeak2" class="victorySpeak sound"
+           src="http://7xqs6j.com1.z0.glb.clouddn.com/invo_win_03.mp3" hidden="true">
+    </audio>
+    <audio id="unloginScore" class="sound"
+           src="http://7xqs6j.com1.z0.glb.clouddn.com/unloginScore.wav" hidden="true">
+    </audio>
+</div>-->
+</body>
+</html>
