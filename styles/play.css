@@ -1,0 +1,893 @@
+#gameInterface{
+    display: none;
+}
+.playZone{
+    text-align: center;
+    position: relative;
+}
+
+.instruction {
+    width: 180px;
+    height: 30px;
+    margin: auto;
+    margin-bottom: -2px;
+    margin-top: 20px;
+    background-color: #6b6b6b;
+    color: White;
+    font-size: 20px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding-top: 2px;
+}
+.instructionDetail {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    min-width: 250px;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    background-image: url('../images/buttonbg.jpg');
+    border: 4px solid #6b6b6b;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#tipsWord{
+    font-size: 20px;
+    vertical-align: middle;
+    display: none;
+}
+#tipsNum{
+    font-size: 30px;
+    vertical-align: middle;
+    display: none;
+}
+
+.buttonStart {
+    margin: 0 auto;
+width: 100%;
+    /*padding: 0;*/
+    height: 50px;
+    font-size: 20px;
+    border: 0px;
+    background-color: transparent;
+    color: White;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 10px;
+    text-shadow: 3px 3px 4px #000000;
+}
+#jsms_box,#szms_box{
+    height: 200px;
+    line-height: 200px;
+    overflow:hidden;
+
+}
+.stopWatch{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 0px 0px 10px #9FE6E2;
+}
+
+.btnAfterGame{
+    margin-top: 15px;
+
+}
+.btnAfterGame .cancel{
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    font-family: "SimHei";
+    border: 3px solid #6B6B6B;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.btnAfterGame .restart{
+height: 40px;
+    width: 170px;
+    font-weight: bold;
+    font-family: "SimHei";
+    border: 3px solid #6B6B6B;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size:18px;
+}
+.btnAfterGame .restart:hover,.btnAfterGame .cancel:hover{
+    background-color: #0b93d5;
+}
+.readyCountNum{
+    width: 100%;
+    font-size: 500px;
+    top: 0;
+    margin: auto;
+    position: absolute;
+    opacity: 0;
+}
+#jsms_spellShow{
+    text-align: center;
+    margin-top: 60px;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background-size: 100% 100%;
+}
+
+#jsms_spellShow.jslq{
+    box-shadow: 0px 0px 50px #68B4FB;
+}
+#jsms_spellShow.hbzq{
+    box-shadow: 0px 0px 50px #68B4FB;
+}
+#jsms_spellShow.ylmb{
+    box-shadow: 0px 0px 50px #72C3FC;
+}
+#jsms_spellShow.dcmc{
+    box-shadow: 0px 0px 50px #F793F5;
+}
+#jsms_spellShow.qxjf{
+    box-shadow: 0px 0px 50px #F487F1;
+}
+#jsms_spellShow.yycj{
+    box-shadow: 0px 0px 50px #D19005;
+}
+#jsms_spellShow.rljl{
+    box-shadow: 0px 0px 50px #D19005;
+}
+#jsms_spellShow.hdys {
+    box-shadow: 0px 0px 50px #D19005;
+}
+#jsms_spellShow.czsb{
+    box-shadow: 0px 0px 50px #F5B9E7;
+}
+#jsms_spellShow.ldxj{
+    box-shadow: 0px 0px 50px #F48DF2;
+}
+
+#jsms_spellShow>div{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}
+[class='picture jslq']{
+    background-image: url("../images/spells/cold_snap.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #CEEBFF;
+}
+[class='picture hbzq']{
+    background-image: url("../images/spells/ice_wall.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #CEEBFF;
+}
+[class='picture ylmb']{
+    background-image: url("../images/spells/ghost_walk.png");
+    background-size: 100% 100%;
+    box-shadow: 0 0 10px #68B4FB;
+}
+[class='picture dcmc']{
+    background-image: url("../images/spells/emp.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #F793F5;
+}
+
+[class='picture qxjf']{
+    background-image: url("../images/spells/tornado.png");
+    background-size: 100% 100%;
+    background-clip: content-box;
+    box-shadow: 0px 0px 10px #9A53BB;
+}
+[class='picture yycj']{
+    background-image: url("../images/spells/sun_strike.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #FFC562;
+}
+[class='picture rljl']{
+    background-image: url("../images/spells/forge_spirit.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #FFC562;
+}
+[class='picture hdys']{
+    background-image: url("../images/spells/chaos_meteor.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #FFC562;
+}
+[class='picture czsb']{
+    background-image: url("../images/spells/deafening_blast.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #F5B9E7;
+}
+[class='picture ldxj']{
+    background-image: url("../images/spells/alacrity.png");
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px #F48DF2;
+}
+
+[class='name jslq']{
+    color:#4785CB ;
+    text-shadow: 0px 0px 100px #68B4FB;
+}
+[class='name hbzq']{
+color:#4785CB ;
+    text-shadow: 0px 0px 100px #CEEBFF;
+}
+[class='name ylmb']{
+color: #72C3FC;
+    text-shadow: 0px 0px 100px #72C3FC;
+}
+[class='name dcmc']{
+    color: #F487F1;
+    text-shadow: 0px 0px 100px #F793F5;
+}
+[class='name qxjf']{
+    color: #F487F1;
+    text-shadow: 0px 0px 100px #F487F1;
+}
+[class='name yycj']{
+    color: #FCCA72;
+    text-shadow: 0px 0px 100px red;
+}
+[class='name rljl']{
+    color: #FCCA72;
+    text-shadow: 0px 0px 100px red;
+}
+[class='name hdys']{
+    color: #FCCA72;
+    text-shadow: 0px 0px 100px red;
+}
+[class='name czsb']{
+color: #F4ADD1;
+    text-shadow: 0px 0px 100px #F5B9E7;
+}
+[class='name ldxj']{
+    color: #F487F1;
+    text-shadow: 0px 0px 100px #F48DF2;
+}
+
+#jsms_spellShow>span{
+    font-size: 30px;
+    padding-left: 0.5em;
+    vertical-align: middle;
+}
+
+[id*=szms_spellShow]{
+    text-align: center;
+    margin-top: 60px;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    background-size: 100% 100%;
+    background-image: url("../images/buttonbg.jpg");
+}
+
+#szms_spellShow6{
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    height: 160px;
+    line-height: 80px;
+    background-size: 100% 50%;
+    background-image: url("../images/buttonbg.jpg");
+}
+
+#szms_spellShow10{
+    text-align: center;
+    margin-top: 40px;
+    width: 100%;
+    height: 160px;
+    line-height: 80px;
+    background-size: 100% 50%;
+    background-image: url("../images/buttonbg.jpg");
+}
+#szms_spellShow1>div{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+    vertical-align: middle;
+}
+#szms_spellShow1>span{
+    font-size: 30px;
+    vertical-align: middle;
+}
+#szms_spellShow2>div{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 1.2rem;
+    margin-left: 1.2rem;
+    vertical-align: middle;
+}
+#szms_spellShow2>span{
+    font-size: 26px;
+    vertical-align: middle;
+}
+#szms_spellShow3>div{
+    width: 55px;
+    height: 55px;
+    display: inline-block;
+    margin-right: 0.6rem;
+    margin-left: 1rem;
+    vertical-align: middle;
+}
+#szms_spellShow3>span{
+    font-size: 24px;
+    vertical-align: middle;
+}
+#szms_spellShow4>div{
+     width: 50px;
+     height: 50px;
+     display: inline-block;
+    margin-right: 0.2rem;
+    margin-left: 0.3rem;
+     vertical-align: middle;
+ }
+#szms_spellShow4>span{
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+#szms_spellShow6>div{
+     width: 55px;
+     height: 55px;
+     display: inline-block;
+     margin-right: 0.6rem;
+     margin-left: 1rem;
+     vertical-align: middle;
+ }
+#szms_spellShow6>span{
+    font-size: 24px;
+    vertical-align: middle;
+}
+#szms_spellShow10>div{
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    margin-right: 0.1rem;
+    margin-left: 0.1rem;
+    vertical-align: middle;
+}
+#szms_spellShow10>span{
+    font-size: 16px;
+    vertical-align: middle;
+}
+#loading{
+    display: none;
+}
+.orbContainer {
+    width: 326px;
+    margin: auto;
+    padding: 0px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+#orb1, #orb2, #orb3 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border: 1px solid #6e6e6e;
+    float: left;
+    margin-left: 5px;
+}
+
+.orbContainer .quash{
+    background-image: url("../images/spells/quash.png");
+    background-size: 100% 100%;
+}
+
+.orbContainer .wex{
+    background-image: url("../images/spells/wex.png");
+    background-size: 100% 100%;
+}
+.orbContainer .exort{
+    background-image: url("../images/spells/exort.png");
+    background-size: 100% 100%;
+}
+
+.panel{
+    position: relative;
+    width: 100%;
+     height: 161px;
+     background-image: url("../images/panel-bg.jpg");
+     background-size: 100% 100%;
+ }
+.panel>div{
+    height: 72px;
+    width: 72px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+    border-color: transparent;
+}
+.panel .jslq{
+background-image: url("../images/spells/cold_snap.png");
+    background-size: 100% 100%;
+}
+.panel .hbzq{
+    background-image: url("../images/spells/ice_wall.png");
+    background-size: 100% 100%;
+}
+.panel .ylmb{
+    background-image: url("../images/spells/ghost_walk.png");
+    background-size: 100% 100%;
+}
+.panel .dcmc{
+    background-image: url("../images/spells/emp.png");
+    background-size: 100% 100%;
+}
+.panel .qxjf{
+    background-image: url("../images/spells/tornado.png");
+    background-size: 100% 100%;
+}
+.panel .yycj{
+    background-image: url("../images/spells/sun_strike.png");
+    background-size: 100% 100%;
+}
+.panel .rljl{
+    background-image: url("../images/spells/forge_spirit.png");
+    background-size: 100% 100%;
+}
+.panel .hdys{
+    background-image: url("../images/spells/chaos_meteor.png");
+    background-size: 100% 100%;
+}
+.panel .czsb{
+    background-image: url("../images/spells/deafening_blast.png");
+    background-size: 100% 100%;
+}
+.panel .ldxj{
+    background-image: url("../images/spells/alacrity.png");
+    background-size: 100% 100%;
+}
+
+.panel .hotkey{
+    position: absolute;
+    height: 23px;
+    width: 22px;
+    top: -13px;
+    left: -10px;
+    padding-right: 3px;
+    padding-top: 3px;
+    color: #bbb2ad;
+    font-weight: bold;
+    cursor: pointer;
+    background-image: url("../images/hotkey-bg.png");
+    background-size:  100% 100%;
+    text-align: center;
+    text-indent: 0;
+}
+#quash{
+    position: absolute;
+    left: 22px;
+    top: 29px;
+    background-image: url("../images/spells/quash.png");
+    background-size: 100% 100%;
+}
+
+#wex{
+    position: absolute;
+    left: 120px;
+    top: 29px;
+    background-image: url("../images/spells/wex.png");
+    background-size: 100% 100%;
+}
+#exort{
+    position: absolute;
+    left: 219px;
+    top: 29px;
+    background-image: url("../images/spells/exort.png");
+    background-size: 100% 100%;
+}
+#skill1{
+    position: absolute;
+    left: 318px;
+    top: 29px;
+}
+#skill2{
+    position: absolute;
+    left: 417px;
+    top: 29px;
+}
+#invoke{
+    position: absolute;
+    left: 515px;
+    top: 29px;
+    background-image: url("../images/spells/invoke.png");
+    background-size: 100% 100%;
+}
+.panel .cancel{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "SimHei";
+    width: 50px;
+    height: 25px;
+    border: 3px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.panel .restart{
+    position: absolute;
+    right: 68px;
+    bottom: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "SimHei";
+    width: 80px;
+    height: 25px;
+    border: 3px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@-webkit-keyframes neon2 {
+    from {
+        text-shadow: 0 0 8px #fff,
+        0 0 16px  #fff,
+        0 0 32px  #228DFF,
+        0 0 35px  #228DFF,
+        0 0 40px #228DFF;
+    }
+    to {
+        text-shadow: 0 0 4px #fff,
+        0 0 12px #fff,
+        0 0 16px #228DFF,
+        0 0 20px #228DFF,
+        0 0 24px #228DFF;
+    }
+}
+@-moz-keyframes neon2 {
+    from {
+        text-shadow: 0 0 8px #fff,
+        0 0 24px  #fff,
+        0 0 32px  #228DFF,
+        0 0 35px  #228DFF,
+        0 0 40px #228DFF;
+    }
+    to {
+        text-shadow: 0 0 4px #fff,
+        0 0 12px #fff,
+        0 0 16px #228DFF,
+        0 0 20px #228DFF,
+        0 0 24px #228DFF;
+    }
+}
+@keyframes neon2 {
+    from {
+        text-shadow: 0 0 8px #fff,
+        0 0 24px  #fff,
+        0 0 32px  #228DFF,
+        0 0 35px  #228DFF,
+        0 0 40px #228DFF;
+    }
+    to {
+        text-shadow: 0 0 4px #fff,
+        0 0 12px #fff,
+        0 0 16px #228DFF,
+        0 0 20px #228DFF,
+        0 0 24px #228DFF;
+    }
+}
+.mix{
+    transform-origin: center center;
+    -webkit-animation: neon2 1s ease-in-out infinite alternate,shake-horizontal 200ms ease-in-out 3;
+    -moz-animation: neon2 1s ease-in-out infinite alternate,shake-horizontal 200ms ease-in-out 3;
+    animation: neon2 1s ease-in-out infinite alternate,shake-horizontal 200ms ease-in-out 3;
+}
+.flash{
+    -webkit-animation: neon2 1s ease-in-out infinite alternate;
+    -moz-animation: neon2 1s ease-in-out infinite alternate;
+    animation: neon2 1s ease-in-out infinite alternate;
+}
+.shake-horizontal {
+    -webkit-animation: shake-horizontal 200ms ease-in-out 3;
+    -moz-animation: shake-horizontal 200ms ease-in-out 3;
+    animation: shake-horizontal 200ms ease-in-out 3;
+}
+
+@-webkit-keyframes shake-horizontal {
+    10% {
+        transform: translate(-10px, 0); }
+    20% {
+        transform: translate(0px, 0); }
+    30% {
+        transform: translate(8px, 0);}
+    40% {
+        transform: translate(0px, 0);}
+    50% {
+        transform: translate(-6px, 0);}
+    60% {
+        transform: translate(0px, 0);}
+    70% {
+        transform: translate(4px, 0);}
+    80% {
+        transform: translate(0px, 0); }
+    90% {
+        transform: translate(-2px, 0);}
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg); }
+}
+@-moz-keyframes shake-horizontal {
+    10% {
+        transform: translate(-10px, 0); }
+    20% {
+        transform: translate(0px, 0); }
+    30% {
+        transform: translate(8px, 0);}
+    40% {
+        transform: translate(0px, 0);}
+    50% {
+        transform: translate(-6px, 0);}
+    60% {
+        transform: translate(0px, 0);}
+    70% {
+        transform: translate(4px, 0);}
+    80% {
+        transform: translate(0px, 0); }
+    90% {
+        transform: translate(-2px, 0);}
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes shake-horizontal {
+     10% {
+         transform: translate(-10px, 0); }
+     20% {
+         transform: translate(0px, 0); }
+     30% {
+         transform: translate(8px, 0);}
+     40% {
+         transform: translate(0px, 0);}
+     50% {
+         transform: translate(-6px, 0);}
+     60% {
+         transform: translate(0px, 0);}
+     70% {
+         transform: translate(4px, 0);}
+     80% {
+         transform: translate(0px, 0); }
+     90% {
+         transform: translate(-2px, 0);}
+     0%, 100% {
+         transform: translate(0, 0) rotate(0deg); }
+ }
+
+/*”Œœ∑Ω· ¯µØ¥∞*/
+/*.boundingBox{
+    position: fixed;
+    border: 1px solid #000;
+    width: 500px;
+    height: 300px;
+    left: 50%;
+    margin-left: -250px;
+}
+.boundingBox input{
+    width: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -50px;
+}*/
+@-webkit-keyframes shake {
+    0%{
+        -webkit-transform:translate(5px, 5px);
+    }
+    25%{
+        -webkit-transform:translate(-5px, -5px);
+    }
+    50%{
+        -webkit-transform:translate(0px, 0px);
+    }
+    75%{
+        -webkit-transform:translate(5px, -5px);
+    }
+    100%{
+        -webkit-transform:translate(-5px, 5px);
+    }
+}
+@keyframes shake {
+    0%{
+        transform:translate(5px, 5px);
+    }
+    25%{
+        transform:translate(-5px, -5px);
+    }
+    50%{
+        transform:translate(0px, 0px);
+    }
+    75%{
+        transform:translate(5px, -5px);
+    }
+    100%{
+        transform:translate(-5px, 5px);
+    }
+}
+.shake{
+    -webkit-animation:shake 0.2s ;
+    animation:shake 0.2s ;
+    -webkit-animation-iteration-count:5 ;
+    animation-iteration-count:5 ;
+}
+
+#mask{
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+#finalScore{
+    /*display: inline-block;*/
+    font-size: 30px;
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    text-align: center;
+top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -220px;
+    padding-top: 10px;
+    opacity: 0;
+    -webkit-transform:scale(3) ;
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform:scale(3) ;
+    -webkit-transition: transform 0.8s ease-in,opacity 0.8s ease-in;
+    -moz-transition: transform 0.8s ease-in,opacity 0.8s ease-in;
+    -ms-transition: transform 0.8s ease-in,opacity 0.8s ease-in;
+    -o-transition: transform 0.8s ease-in,opacity 0.8s ease-in;
+    transition: transform 0.8s ease-in,opacity 0.8s ease-in;
+    background-image: url("../images/dota2bg.jpg");
+    background-size: 100% 110%;
+    background-position: 50% -5px;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-blend-mode: color;
+    border: solid #777777 3px;
+    border-radius: 15px;
+}
+#finalScore .close {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    right: -20px;
+    top: -20px;
+    background-color: #666666;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#finalScore .close:hover{
+    background: #0b93d5;
+}
+#finalScore .close::before,#finalScore .close::after{
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -4px;
+    background: #000;
+    border-radius: 5px;
+
+}
+#finalScore .close::before{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#finalScore .close::after{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#finalScore .scoreText,#finalScore .scoreRate{
+    font-size: 60px;
+    vertical-align: middle;
+}
+#shareBox{
+    font-size: 20px;
+    margin-top:30px;
+
+}
+.Weibo,.QQ{
+    color: rgba(255, 255, 255,.30);
+    text-decoration: none;
+    display: inline-block;
+    font: normal normal normal 30px/1 FontAwesome;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 20px;
+    margin-right:10px;
+}
+.Weibo:after{
+    content: "\f18a";
+}
+.QQ:after{
+    content: "\f1d6";
+}
+.scoreBoard{
+    display: none;
+    margin-top: 50px;
+}
+.scoreBoard table{
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+    border: none;
+    font-size: 25px;
+}
+#caption{
+    font-size: 25px;
+}
+.scoreBoard td{
+    text-align: left;
+    line-height: 25px;
+    font-size: 13px;
+    height: 34px;
+    padding: 2px;
+    border: none;
+    margin:0px;
+}
+.scoreBoard td:first-child{
+    width: 20px;
+    padding-left: 5px;
+}
+.scoreBoard td:nth-child(2){
+    width: 50px;
+}
+.scoreBoard td:nth-child(3){
+    width: 400px;
+}
+.scoreBoard td.scoreCol{
+    text-align: right;
+    padding-right: 20px;
+}
+.scoreBoard tr{
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding-right: 10px;
+}
+.odd{
+    background-color: #333333;
+}
+.even{
+    background-color: #121212;
+}
+.scoreBoard table td:first-child {
+    -moz-border-radius-bottomleft:5px;
+    -webkit-border-bottom-left-radius:5px;
+    border-bottom-left-radius:5px;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-left-radius:5px;
+    border-top-left-radius:5px
+}
+.scoreBoard table td:last-child {
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-bottom-right-radius:5px;
+    border-bottom-right-radius:5px
+}

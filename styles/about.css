@@ -1,0 +1,31 @@
+hr{
+    color: white;
+}
+.authorInfo{
+    font-size:25px;
+    font-family: SimSun;
+    line-height:40px;
+    margin-top:40px;
+
+}
+
+.authorInfo a:before{
+    content: "\f18a";
+}
+
+.authorInfo a{
+    color: rgba(255, 255, 255, .30);
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+    -ms-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    display: inline-block;
+    font: normal normal normal 30px/1 FontAwesome;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.authorInfo a:hover{
+    color:#E6162D;
+}

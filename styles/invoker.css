@@ -1,0 +1,86 @@
+body { background-color: ; color: #ffffff; padding: 0px; margin: 0px; font-family: Tahoma; font-size: 12px; }
+.background { background: #000000 url('../images/background.jpg') repeat-y top center; min-height: 625px; }
+table { font-size: 12px; font-family: Tahoma; text-align: left; }
+h1 { margin: 0; padding: 8px 0; font-family: georgia,serif; font-weight: normal; text-transform: uppercase; letter-spacing: 7px; font-size: 36px; color: #d9d9d9; }
+h2 { margin: 0; padding: 3px 0; font-family: georgia,serif; font-weight: normal; text-transform: uppercase; letter-spacing: 3px; font-size: 15px; color: #d9d9d9; line-height: 25px; }
+.orbContainer { width: 326px; margin: auto; padding: 0px; margin-top: 10px; }
+.bottomcontainer { position: relative; background: transparent url('/Images/bottom.png') no-repeat; margin: auto; width: 1041px; height: 54px; z-index: 10; margin-top: -25px; }
+.menucontainer { position: relative; background: transparent url('/Images/menu-bg.png') no-repeat; margin: auto; width: 1041px; height: 87px; z-index: 10; margin-bottom: -45px; }
+.menucontainer .login { position: absolute; right: 70px; height: 31px; top: 6px; vertical-align: middle; background-color: Gray; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; padding: 2px; }
+.menucontainer .menu { position: absolute; left: 70px; height: 32px; top: 6px; vertical-align: middle; background-color: Gray; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; padding: 2px; }
+.menucontainer .menu a { float: left; vertical-align: middle; padding: 5px; padding-left: 8px; padding-right: 8px; display: block; background-color: #000000; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; color: White; font-weight: bold; font-family: Arial Black, Tahoma; font-size: 13px; text-transform: uppercase; text-decoration: none; margin: 2px; }
+.menucontainer .menu a:hover { background-color: #333; }
+.menucontainer .login .avatar { vertical-align: middle; border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; margin-right: 5px; }
+.menucontainer .login .signout { vertical-align: middle; padding: 3px; padding-left: 8px; padding-right: 8px; display: block; background-color: #000000; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; color: White; font-weight: bold; font-size: 9px; text-decoration: none; margin-right: 2px; margin-left: 10px; }
+.menucontainer .login .signinImage { border: 4px solid #000; border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; margin: 0px; }
+.menucontainer .login .signinImage:hover { border-color:#333; }
+.container { margin: auto; width: 600px; background-color: #01040a; border: 3px solid #393939; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; position: relative; margin-top: 6px; padding-top:15px; }
+.container .top { text-align: center; }
+.container .content { padding: 10px; position: relative; text-align: center; }
+.container .bottom { background-image: url('../images/bottom-bg.jpg'); width: 600px; height: 161px; position: relative; }
+.container .bottom img { height: 72px; width: 72px; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; cursor: pointer; }
+.container .bottom .hotkey { position: absolute; height: 22px; width: 21px; top: -13px; left: -10px; background: transparent url('../images/hotkey-bg.png') no-repeat; color: #bbb2ad; font-size: 12px; font-weight: bold; padding-left: 4px; padding-top: 2px; cursor: pointer; }
+.container .bottom .first { position: absolute; left: 22px; top: 29px; }
+.container .bottom .second { position: absolute; left: 120px; top: 29px; }
+.container .bottom .third { position: absolute; left: 218px; top: 29px; }
+.container .bottom .fourth { position: absolute; left: 316px; top: 29px; }
+.container .bottom .fifth { position: absolute; left: 415px; top: 29px; }
+.container .bottom .sixth { position: absolute; left: 514px; top: 29px; }
+.container .rightcontainer { position: absolute; right: -210px; top: -3px; width: 202px; }
+.container .leftcontainer { position: absolute; left: -210px; top: -3px; width: 202px; }
+.container .infobox img { width: 20px; height: 20px; vertical-align: text-bottom; }
+.container .infobox .quashtext { font-weight: bold; color: #72C3FC; }
+.container .infobox .wextext { font-weight: bold; color: #CE72FC; }
+.container .infobox .exorttext { font-weight: bold; color: #FCCA72; }
+.container .infobox .infoboxhotkey { font-weight: bold; color: #FCCA72; }
+.container .infobox { border: 3px solid #393939; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; background-color: #01040a; padding: 8px; line-height: 15px; margin-bottom: 5px; }
+.container .spellList { line-height: 25px; }
+.container .scoreboardMenu { padding-left: 0px !important; padding-right: 0px !important; }
+.container .scoreboardMenu a { font-family: Arial Black; display: block; padding: 5px; background-color: #000; font-size: 11px; text-transform: uppercase; text-decoration: none; color: #EDEDED; }
+.container .scoreboardMenu a:hover { background-color: #222; }
+.container .scoreboardMenu .selected { background-color: #777; }
+.container .scoreboardMenu .selected:hover { background-color: #888; }
+.statinput { background-color: #01040a; width: 45px; height: 15px; color: #ffffff; text-align: right; border: 0px; font-weight: bold; }
+.speechboxHeadline { width: 150px; height: 25px; margin: auto; margin-bottom: -10px; margin-top: 0px; background-color: #6b6b6b; color: White; font-size: 12px; font-weight: bold; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding-top: 2px; }
+.speechbox { margin: auto; height: 40px; min-width: 290px; border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; background-image: url('../images/bg.jpg'); border: 4px solid #6b6b6b; padding-top: 11px; padding-bottom: 9px; padding-left: 20px; padding-right: 20px; }
+.ActiveSpell { white-space: nowrap; text-align: center; margin: auto; font-weight: bold; font-family: Tahoma; text-shadow: 2px 2px 4px #000000; font-size: 16px; padding-left: 15px; padding-right: 15px; }
+#orb1, #orb2, #orb3 { width: 100px; height: 100px; border-radius: 50px; -moz-border-radius: 50px; -webkit-border-radius: 50px; border: 1px solid #6e6e6e; float: left; margin-left: 5px; }
+.quash { background: #000000 url('../images/spells/quas.png') no-repeat 5px 5px; border-color: #0a1c4e !important; background-color: #0a1c4e; }
+.wex { background: #000000 url('../images/spells/wex.png') no-repeat 5px 5px; border-color: #3a0f45 !important; background-color: #3a0f45; }
+.exort { background: #000000 url('../images/spells/exort.png') no-repeat 5px 5px; border-color: #481308 !important; background-color: #481308; }
+.ActiveSpell img { width: 22px; height: 22px; vertical-align: middle; margin-top: -3px; }
+.Defocus { position: fixed; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 100; display: none; }
+#GameConfigContainer #GameConfig { text-align: center; margin-top: 20%; font-size: 28px; font-family: Tahoma; }
+#LoginNotification div { text-align: center; margin-top: 20%; font-size: 16px; font-family: Tahoma; }
+.Button { background-color: #EDEDED; border: 2px solid Gray; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-size: 11px; font-weight: bold; cursor: pointer; }
+.Button:hover { background-color: #D6F5FF; }
+.GameModeButton { width: 90px; }
+.StatsMainStatResult { font-weight: bold; font-size: 40px; }
+.StatsButton { font-size: 21px; padding-left: 10px; padding-right: 10px; }
+.ButtonStart { font-size: 16px; border: 0px; background-color: transparent; color: White; height: 40px; margin-top: -9px; margin-bottom: -10px; font-weight: bold; cursor: pointer; }
+#ProgressBar { margin-top: 9px; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+
+.HighScoreTable { width: 100%; border-radius: 20px; margin-bottom: 20px; }
+.HighScoreHeader td { background-color: #EDEDED; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; }
+.HighScoreHeaderInner td { padding: 3px; background-color: #EDEDED; color: Black; font-family: Arial Black, Tahoma; text-transform: uppercase; font-size: 14px; }
+.HighScoreLine { padding: 2px; position: relative; height: 34px; border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+.HighScoreLineAlt { background-color: #333; }
+.HighScoreLine .hsPlace { position: absolute; left: 5px; top: 11px; font-family: Impact; width: 20px; text-align: center; }
+.HighScoreLine .hsImage { position: absolute; top: 3px; left: 30px; width: 35px; }
+.HighScoreLine .hsImage img { border-radius: 7px; -moz-border-radius: 7px; -webkit-border-radius: 7px; }
+.HighScoreLine .hsName { position: absolute; left: 71px; top: 12px; }
+.HighScoreLine .hsDate { position: absolute; right: 120px; top: 13px; color: Gray; font-weight: bold; font-size: 10px; width: 120px; text-align: right; }
+.HighScoreLine .hsResult { position: absolute; right: 5px; top: 12px; font-weight: bold; font-size: 11px; width: 80px; text-align: right; padding-right: 8px; }
+
+.PeriodButtonContainer { float: left; }
+.PeriodButton { display: block; color: #000; font-size: 11px; text-decoration: none; padding: 6px; padding-left: 9px; padding-right: 9px; margin-left: 5px; -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.PeriodButtonWrapper { position: absolute; right: 8px; bottom: 0px; }
+.PeriodButtonSelected { color: #FFF; background-color: #01040A; }
+
+
+.donators { width:100%; table-layout:fixed; margin-bottom:20px; }
+.donators .name { white-space:nowrap; text-overflow:ellipsis; overflow:hidden; width:110px; }
+.donators .amount { text-align:right; width:40px; padding-right:5px; }
+.donators .alt td { background-color: #464646 }
+.donators .no { font-weight:bold; text-align:center; width: 25px; }
+.message { line-height:15px; margin-bottom:20px; }

@@ -1,0 +1,273 @@
+.content {
+    background-image: url("../images/wall.jpg");
+}
+
+#controlbox {
+    float: left;
+    width: 165px;
+    border: 4px solid #808080;
+    border-radius: 5px;
+    line-height: 30px;
+    background-color: black;
+
+}
+
+#controlbox h2 {
+    text-indent: 3px;
+    border-bottom: solid 3px #808080;
+}
+
+#controlbox h3 {
+    text-indent: 5px;
+}
+
+#skillKey {
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+#skillKey, label {
+    font-size: 0.8rem;
+}
+
+#itemKey {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#itemKey td {
+    position: relative;
+    width: 33%;
+    height: 40px;
+    background-color: #333333;
+    border: inset 2px black;
+
+}
+
+#itemKey p {
+    position: absolute;
+    left: 1px;
+    top: 0;
+    line-height: 15px;
+}
+
+#itemKey td:hover {
+    border: solid 2px #777777;
+}
+
+#legacyCheckbox {
+    margin-left: 5px;
+}
+
+#musicCheckbox, #soundCheckbox {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+#reset {
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+#skillKey td {
+    margin: 0px 0;
+}
+
+#skillKey td:first-child {
+    text-align: center;
+    color: #F8E89A;
+}
+
+#skillKey td:hover {
+    color: red;
+}
+
+#skillKey tr, #itemKey, #musicCheckbox, #soundCheckbox, #legacyCheckbox, #reset, #controlbox label {
+    cursor: pointer;
+}
+
+#skillBox {
+    float: right;
+    height: 600px;
+    width: 195px;
+    border: 4px solid #808080;
+    border-radius: 5px;
+    line-height: 35px;
+    background-color: black;
+
+}
+
+#skillBox h2 {
+    text-indent: 3px;
+    margin-bottom: 5px;
+}
+
+#skillBox img {
+    width: 20px;
+    height: 20px;
+    vertical-align: baseline;
+}
+
+#skillBox span {
+    font-size: 0.8rem;
+}
+
+#skillBox .quashtext {
+    color: #72C3FC;
+}
+
+#skillBox .wextext {
+    color: #CE72FC;
+}
+
+#skillBox .exorttext {
+    color: #E92121;
+}
+
+#skillBox .spellName {
+    letter-spacing: 1px;
+}
+
+#spellTable {
+    margin-left: 5px;
+}
+
+#mainContainer {
+    margin-left: 180px;
+    margin-right: 210px;
+
+    min-height: 500px;
+
+    border: 4px solid #808080;
+
+    border-radius: 5px;
+    background-color: black;
+}
+
+#title {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+#mainContainer ul {
+    width: 207px;
+    display: block;
+    float: left;
+    list-style: none;
+    line-height: 60px;
+    padding: 0px 0 0 0px;
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.button {
+    letter-spacing: 6px;
+    text-align: center;
+    margin-bottom: 100px;
+    text-decoration: none;
+    font-size: 1.2rem; /*Change the em value to scale the button*/
+    font-family: "Microsoft Yahei";
+    color: #fff;
+    border: 1px solid #9c9c9c; /* Fallback style */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+}
+
+#mainContainer span {
+    letter-spacing: 0px;
+
+}
+
+.button {
+    -moz-border-radius: 1rem;
+    border-radius: 0.5rem;
+    border-top: 1px solid #fff; /* Fallback style */
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    display: block;
+    padding: 0rem 1.5rem; /* The background pattern */
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(0, 0, 0, 0.05)), color-stop(.25, transparent), to(transparent)), -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, rgba(0, 0, 0, 0.05)), color-stop(.25, transparent), to(transparent)), -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, rgba(0, 0, 0, 0.05))), -webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, rgba(0, 0, 0, 0.05)));
+    background-image: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent), -moz-linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%, transparent), -moz-linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%), -moz-linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.05) 75%); /* Pattern settings */
+    -moz-background-size: 3px 3px;
+    -webkit-background-size: 3px 3px;
+    background-size: 3px 3px;
+}
+
+.button:hover {
+    box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 0 .1rem rgba(0, 0, 0, 0.4);
+}
+
+.button:active {
+    /* When pressed, move it down 1px */
+    position: relative;
+    top: 1px;
+}
+
+.button-black {
+    background: #141414;
+    background: -webkit-gradient(linear, left top, left bottom, from(#656565), to(#141414));
+    background: -moz-linear-gradient(-90deg, #656565, #141414);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#656565', EndColorStr='#141414');
+}
+
+.button-black:hover {
+    background: #656565;
+    background: -webkit-gradient(linear, left top, left bottom, from(#141414), to(#656565));
+    background: -moz-linear-gradient(-90deg, #141414, #656565);
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#141414', EndColorStr='#656565');
+    color: #e36500;
+}
+
+.button-black:active {
+    background: #141414;
+}
+
+#intro {
+    position: relative;
+    margin-left: 230px;
+    height: 320px;
+    background-color: #582722;
+}
+
+#intro h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+#intro p {
+    text-indent: 2em;
+    font-size: 0.9rem;
+    margin-left: 3px;
+    line-height: 30px;
+}
+
+#arrow {
+    position: absolute;
+    left: -30px;
+    top: 48px;
+    border: solid 15px #582722;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+
+
+
+
+
+
+

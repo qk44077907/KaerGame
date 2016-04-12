@@ -1,0 +1,147 @@
+.basicData {
+    width: 100%;
+    height: 430px;
+}
+
+#basicLeft {
+    float: left;
+    width: 35%;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-top: 20px;
+}
+#basicRight{
+    float: right;
+    width:380px;
+    height:380px;
+    margin-right: 120px;
+    /*background-color: transparent;*/
+}
+
+#portrait {
+    width: 100px;
+    height: 100px;
+    padding-right: 10px;
+    float: left;
+}
+
+#int, #agi, #str {
+    line-height: 25px;
+    float: left;
+}
+
+#name {
+    line-height: 32px;
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#slider {
+    margin-top: 20px;
+    margin-left: 5px;
+    width: 90%;
+    float: left;
+    clear: both;
+}
+
+#statsTab {
+    margin-top: 20px;
+    margin-left: -7px;
+    display: inline-table;
+    width: 330px;
+}
+
+.hero-attr {
+    width: 25px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 3px;
+}
+
+.hero-stats {
+    margin: 5px;
+    width: 70px;
+    float: left;
+    height: 40px;
+    line-height: 20px;
+    border: 1px solid rgb(45, 45, 45);
+    text-align: center;
+    background-color: rgb(23, 23, 23);
+}
+
+#normal {
+    overflow: hidden;
+    height: 700px;
+}
+
+.skills {
+    display: block;
+    vertical-align: top;
+    height: 350px;
+    width: 49%;
+    padding-left: 6px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.basicSkill {
+    font-weight: bold;
+    width: 200px;
+    height: 62px;
+    line-height: 42px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.basicSkill img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px !important;
+    padding: 2px;
+    width: 45px;
+}
+
+.attribVal {
+    color: rgb(251, 184, 41);
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.manaImg, .cooldownImg {
+    width: 17px;
+    height: 17px;
+}
+
+.tips {
+    color: rgb(102, 221, 102);
+}
+.invokes{
+    width: 65%;
+}
+.invokeImage {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 15px !important;
+    width: 45px;
+}
+
+.invokeSkill {
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    width: 93%;
+    height: 62px;
+    line-height: 42px;
+    font-size: 20px;
+
+}
