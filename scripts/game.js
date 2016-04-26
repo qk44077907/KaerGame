@@ -25,7 +25,9 @@ $(function () {
         $exort = $('#exort'),
         $skill1 = $('#skill1'),
         $skill2 = $('#skill2'),
-        $invoke = $('#invoke');
+        $invoke = $('#invoke'),
+    $finalScore=$("#finalScore");
+    $finalScore.draggable();
 
     var hotkeyCode = {      //热键表
         "quash": 81,
@@ -193,9 +195,19 @@ $(function () {
         $('#legacyCheckbox').prop('checked', false);
         $LegacyHotkeys.hide();
         $NormalHotkeys.show();
+    });
 
-    });            //恢复默认键位
-
+    //关闭成绩面板
+    $finalScore.on('click','.close',function(){
+        $("#mask").hide();
+        $finalScore.css({
+            '-webkit-transform':'scale(3)',
+            '-moz-transform': 'scale(3)',
+            '-ms-transform': 'scale(3)',
+            '-o-transform':'scale(3)',
+            'opacity':0
+        });
+    });
     var blinkFlag, blinkSet;
 
     function skillKeyActivate() {                    //改键闪烁动画
@@ -569,24 +581,12 @@ var imgURL;
                 success: function (data, testStatus) {
                     scoreData=data;
                     $("#loading").hide();
-                    $("#scoreBox").html("<span class='close rounded black'></span>恭喜你，完成挑战！<br/><br/>耗时:<span class='scoreText'>"+data.score+"</span>秒,<br/> 打败了全国<span class='scoreRate'>"+data.rate+"%</span>的玩家！").draggable();
+                    $("#scoreBox").html("恭喜你，完成挑战！<br/><br/>耗时:<span class='scoreText'>"+data.score+"</span>秒,<br/> 打败了全国<span class='scoreRate'>"+data.rate+"%</span>的玩家！");
                     $(".scoreText,.scoreRate").css('color','rgba('+data.rate*255+','+(1-data.rate)*255+',0,1)');
                     $(".playZone").append(data.table);
                     $(".scoreBoard tr:odd").addClass("odd");
                     $(".scoreBoard tr:even").addClass("even");
                     $(".scoreBoard").slideDown(300);
-
-
-                    $("#finalScore .close").click(function(){
-                        $("#mask").hide();
-                        $("#finalScore").css({
-                            '-webkit-transform':'scale(3)',
-                            '-moz-transform': 'scale(3)',
-                            '-ms-transform': 'scale(3)',
-                            '-o-transform':'scale(3)',
-                            'opacity':0
-                        });
-                    });
 
                 }
             });
@@ -633,7 +633,7 @@ var imgURL;
                 $("#mask").show();
                 $("#unloginScore")[0].play();
                 setTimeout(function(){
-                    $("#finalScore").css({
+                    $finalScore.css({
                         '-webkit-transform':'scale(1)',
                         '-moz-transform': 'scale(1)',
                         '-ms-transform': 'scale(1)',
@@ -642,11 +642,13 @@ var imgURL;
                     });
                 },80);
                 setTimeout(function(){
-                    $("#finalScore").addClass('shake');
-
+                    $finalScore.addClass('shake');
                 },800);
                 setTimeout(function(){
-                    $("#finalScore").removeClass('shake');},2000);
+                    share();
+                },1000);
+                setTimeout(function(){
+                    $finalScore.removeClass('shake');},2000);
             },6000);
         }
     };
@@ -689,7 +691,7 @@ var imgURL;
         randomClassList.push(skillkeyCode[key]);
     }
 
-    var randomClassTemp = [];
+    var randomClassTemp = []; //实战模式上一次需要召唤的技能列表
 //显示下一组技能函数
     function randomSpellShow(skillNum, pictureBox, nameBox, spellBox) {
         var randomClass;
@@ -1060,37 +1062,88 @@ var imgURL;
                             alert("数据返回失败");
                         },
                         success: function () {
-                            var el = document.createElement("a");
-                            document.body.appendChild(el);
-                            el.href = _URL; //url 是你得到的连接
-                            el.target = '_new'; //指定在新窗口打开
-                            el.click();
-                            document.body.removeChild(el);
                         }
                     });
                 }
             });
-        var pic=getCookie("PHPSESSID");
+        var picName=getCookie("PHPSESSID");
         var sinaShareURL="http://service.weibo.com/share/share.php?";//新浪URL
-        var qqShareURL="http://share.v.t.qq.com/index.php?c=share&a=index&";//QQURL
+        var qqShareURL="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";//QQURL
         var website_url=document.location; //host_url获取当前的路径
-        var host_url=window.location;
-        var title="我在DOTA2极速卡尔中完成了"+((currentGame.gameType=='jsms')?'极速模式':'实战模式')+'的挑战，共耗时'+$('.scoreText').text()+'秒,打败了全国'+$('.scoreRate').text()+'%的玩家！成为核心选手指日可待！求挑战~！';
-        var _URL;
-        if($(this).attr('class')=="Weibo"){
-            _URL=sinaShareURL+"url="+website_url+"&title="+title+"&pic="+host_url+"/"+pic+".jpg";//新浪
-        }else if($(this).attr('class')=="QQ"){
-            _URL=qqShareURL+"url="+host_url+"&title="+title+"&pic="+pic;//QQ
-        }
+        var host_url=window.location.host;
+        var title="我在DOTA2极速卡尔中完成了"+((currentGame.gameType=='jsms')?'极速模式':'实战模式')+'的挑战，共耗时'+$('.scoreText').text()+'秒,打败了全国'+$('.scoreRate').text()+'的玩家！成为核心选手指日可待！求挑战~！';
+        $(".Weibo").attr('href',sinaShareURL+"url="+website_url+"&title="+title+"&pic="+host_url+"/user_pic/"+picName+".jpeg").attr('target','_blank');
+        $(".QQ").attr('href',qqShareURL+"url="+host_url+"&desc="+title+"&pics="+host_url+"/user_pic/"+picName+".jpeg").attr('target','_blank');
+
     }
-    $(".Weibo,.QQ").click(share);
     function getCookie(name) {
         var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
         if(arr=document.cookie.match(reg))
             return decodeURIComponent(arr[2]);
         else return null;
     }
-})
+    (function preloadImages() {
+        if (document.images) {
+            var img1 = new Image();
+            var img2 = new Image();
+            var img3 = new Image();
+            var img4 = new Image();
+            var img5 = new Image();
+            var img6 = new Image();
+            var img7 = new Image();
+            var img8 = new Image();
+            var img9 = new Image();
+            var img10 = new Image();
+            var img11 = new Image();
+            var img12 = new Image();
+            var img13 = new Image();
+            var img14 = new Image();
+            var img15 = new Image();
+            var img16 = new Image();
+            var img17=  new Image();
+            var img18=  new Image();
+            var div1=document.createElement('div');
+            var div2=document.createElement('div');
+            var div3=document.createElement('div');
+            var div17=document.createElement('div');
+            var div18=document.createElement('div');
+            var div4=document.createElement('div');
+            var div5=document.createElement('div');
+            var div6=document.createElement('div');
+            img1.src = "./images/spells/quash.png";
+            img2.src = "./images/spells/wex.png";
+            img3.src = "./images/spells/exort.png";
+            img17.src = "./images/panel-bg.jpg";
+            img18.src = "./images/dota2bg.jpg";
+            img4.src = "./images/hotkey-bg.png";
+            img5.src = "./images/spells/invoke.png";
+            img6.src = "./images/buttonbg.jpg";
+            div1.style.backgroundImage="url(./images/spells/quash.png)";
+            div2.style.backgroundImage="url(./images/spells/wex.png)";
+            div3.style.backgroundImage="url(./images/spells/exort.png)";
+            div17.style.backgroundImage="url(./images/panel-bg.jpg)";
+            div18.style.backgroundImage= "url(./images/dota2bg.jpg)";
+            div4.style.backgroundImage="url(./images/hotkey-bg.png)";
+            div5.style.backgroundImage="url(./images/spells/invoke.png)";
+            div6.style.backgroundImage="url(./images/buttonbg.jpg)";
+            //技能图片预加载
+            img7.src ="./images/spells/cold_snap.png";
+            img8.src ="./images/spells/ghost_walk.png";
+            img9.src ="./images/spells/ice_wall.png";
+            img10.src ="./images/spells/emp.png";
+            img11.src ="./images/spells/tornado.png";
+            img12.src ="./images/spells/alacrity.png";
+            img13.src ="./images/spells/sun_strike.png";
+            img14.src ="./images/spells/forge_spirit.png";
+            img15.src ="./images/spells/chaos_meteor.png";
+            img16.src ="./images/spells/deafening_blast.png";
+        }
+    })();
+});
+window.onload=
+    function loadSound() {
+        $('body').append('<div id="footer" style="display: none"><audio id="countSound" class="sound" src="music/ui_findmatch_join_01.wav" hidden="true"></audio> <audio id="modelhoverSound" class="sound" src="music/click_alt.wav" hidden="true"> </audio> <audio id="modelclickSound" class="sound" src="music/pick_select.wav" hidden="true"> </audio> <audio id="cancelSound" class="sound" src="music/click_back.wav" hidden="true"> </audio> <audio id="invokeSound" class="sound" src="music/invoke.wav" hidden="true"> </audio> <audio id="coldSnap" class="jslq sound skill" src="music/cold_snap.wav" hidden="true"> </audio> <audio id="ghostWalk" class="ylmb sound skill" src="music/ghost_walk.wav" hidden="true"> </audio> <audio id="iceWall" class="hbzq sound skill" src="music/ice_wall_slow01.wav" hidden="true"> </audio> <audio id="empCharge" class="dcmc sound skill" src="music/emp_charge.wav" hidden="true"> </audio> <audio id="tornado" class="qxjf sound skill" src="music/tornado_cast.wav" hidden="true"> </audio> <audio id="alacrity" class="ldxj sound skill" src="music/alacrity.wav" hidden="true"> </audio> <audio id="sunstrikeCharge" class="yycj sound skill" src="music/sunstrike_charge.wav" hidden="true"> </audio> <audio id="meteor" class="hdys sound skill" src="music/meteor.wav" hidden="true"> </audio> <audio id="deafeningBlast" class="czsb sound skill" src="music/deafening_blast.wav" hidden="true"> </audio> <audio id="lvlup" class="sound" src="music/power_up_06.wav" hidden="true"> </audio> <audio id="gameMusic" class="music" src="http://m2.music.126.net/AOChMFXWryJzWO2vR5iwIw==/7797736464973704.mp3" hidden="true" loop="true"> </audio> <audio id="keyBindOpen" class="sound" src="music/keybind_open.wav" hidden="true"> </audio> <audio id="keyBindSet" class="sound" src="music/keybind_set.wav" hidden="true"> </audio> <audio id="victory" class="sound" src="http://7xqs6j.com1.z0.glb.clouddn.com/dota2_music_victory_radiant_comp.mp3" hidden="true"> </audio> <audio id="victorySpeak1" class="victorySpeak sound" src="http://7xqs6j.com1.z0.glb.clouddn.com/invo_win_02.mp3" hidden="true"> </audio> <audio id="victorySpeak2" class="victorySpeak sound" src="http://7xqs6j.com1.z0.glb.clouddn.com/invo_win_03.mp3" hidden="true"> </audio> <audio id="unloginScore" class="sound" src="http://7xqs6j.com1.z0.glb.clouddn.com/unloginScore.wav" hidden="true"> </audio> </div>');
+    };
 
 
 
