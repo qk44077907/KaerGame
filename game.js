@@ -691,7 +691,7 @@ var imgURL;
         randomClassList.push(skillkeyCode[key]);
     }
 
-    var randomClassTemp = [];
+    var randomClassTemp = []; //实战模式上一次需要召唤的技能列表
 //显示下一组技能函数
     function randomSpellShow(skillNum, pictureBox, nameBox, spellBox) {
         var randomClass;
